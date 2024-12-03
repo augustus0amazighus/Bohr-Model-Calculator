@@ -4,7 +4,7 @@
 #include <thread>
 #include <chrono>
 
-// دوال لطباعة الألوان
+
 void printGreen(const std::string &text) {
     std::cout << "\033[1;32m" << text << "\033[0m";
 }
@@ -21,14 +21,14 @@ void printBlue(const std::string &text) {
     std::cout << "\033[1;34m" << text << "\033[0m";
 }
 
-// دالة لطباعة شعار البرنامج
+
 void printBanner() {
     printBlue("=====================================\n");
     printGreen("          BOHR MODEL CALCULATOR      \n");
     printBlue("=====================================\n\n");
 }
 
-// دالة لطباعة القائمة
+
 void printMenu() {
     printYellow("\n=====================================\n");
     printBlue("              MAIN MENU              \n");
@@ -43,7 +43,7 @@ void printMenu() {
     printGreen("Your choice: ");
 }
 
-// دالة لطباعة العنوان الرئيسي للنتائج
+
 void printResultHeader(const std::string &title) {
     printYellow("\n=====================================\n");
     printBlue("            " + title + "            \n");
@@ -55,14 +55,14 @@ int main() {
     while (running) {
         printBanner();
 
-        // تعريف المتغيرات والثوابت
-        int choice, n1, n2, z;
-        const double h = 6.626e-34;    // ثابت بلانك (J·s)
-        const double c = 3.00e8;       // سرعة الضوء (m/s)
-        const double eV_to_J = 1.602e-19; // تحويل الإلكترون فولت إلى جول
-        const double a = 0.53;         // نصف القطر الأساسي (أنجستروم)
 
-        // إدخال المدخلات الرئيسية
+        int choice, n1, n2, z;
+        const double h = 6.626e-34;   
+        const double c = 3.00e8;       
+        const double eV_to_J = 1.602e-19; 
+        const double a = 0.53;      
+
+
         do {
             std::cout << "Enter the principal quantum number n1 (positive integer): ";
             std::cin >> n1;
@@ -81,10 +81,10 @@ int main() {
         printMenu();
         std::cin >> choice;
 
-        // تعريف متغيرات النتائج
+   
         double In, En, DE, L, Rn, v;
 
-        // تنفيذ الحسابات بناءً على الخيار
+  
         switch (choice) {
             case 1:
                 printResultHeader("IONIZATION ENERGY (In)");
