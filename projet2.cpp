@@ -4,7 +4,6 @@
 #include <thread>
 #include <chrono>
 
-
 void printGreen(const std::string &text) {
     std::cout << "\033[1;32m" << text << "\033[0m";
 }
@@ -28,7 +27,6 @@ void printBanner() {
     printBlue("=====================================\n\n");
 }
 
-
 void printMenu() {
     printYellow("\n=====================================\n");
     printBlue("              MAIN MENU              \n");
@@ -43,7 +41,6 @@ void printMenu() {
     printGreen("Your choice: ");
 }
 
-
 void printResultHeader(const std::string &title) {
     printYellow("\n=====================================\n");
     printBlue("            " + title + "            \n");
@@ -54,15 +51,12 @@ int main() {
     bool running = true;
     while (running) {
         printBanner();
-
-
         int choice, n1, n2, z;
         const double h = 6.626e-34;   
         const double c = 3.00e8;       
         const double eV_to_J = 1.602e-19; 
         const double a = 0.53;      
-
-
+        
         do {
             std::cout << "Enter the principal quantum number n1 (positive integer): ";
             std::cin >> n1;
@@ -80,11 +74,9 @@ int main() {
 
         printMenu();
         std::cin >> choice;
-
-   
+        
         double In, En, DE, L, Rn, v;
-
-  
+        
         switch (choice) {
             case 1:
                 printResultHeader("IONIZATION ENERGY (In)");
@@ -152,7 +144,6 @@ int main() {
          system("timeout /t 1 >nul");
          std::cout << "\n\n";
         }
-
     }
 
     printGreen("\nThank you for using the Bohr Model Calculator! Goodbye!\n");
